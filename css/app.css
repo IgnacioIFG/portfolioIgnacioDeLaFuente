@@ -78,7 +78,7 @@ body{
     position: absolute;
     width: 50%;
     height: 50%;
-   animation: circulo1 50s linear infinite both ;
+    animation: circulo1 25s linear infinite both ;
     
 }
 .circulos .circulo1{
