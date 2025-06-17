@@ -657,3 +657,249 @@ body {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
+
+
+/* Sección de Experiencia */
+.experience {
+  background: transparent;
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Línea vertical del timeline */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-color), rgba(59, 130, 246, 0.3));
+  transform: translateX(-50%);
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Alternar posición de los elementos */
+.experience-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.experience-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.experience-date {
+  flex: 0 0 150px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.date-badge {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Punto en la línea del timeline */
+.date-badge::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border: 3px solid white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.experience-item:nth-child(odd) .date-badge::after {
+  right: -32px;
+}
+
+.experience-item:nth-child(even) .date-badge::after {
+  left: -32px;
+}
+
+.experience-content {
+  flex: 1;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.experience-content:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Flecha apuntando al timeline */
+.experience-content::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+}
+
+.experience-item:nth-child(odd) .experience-content::before {
+  right: -24px;
+  border-left-color: var(--bg-card);
+}
+
+.experience-item:nth-child(even) .experience-content::before {
+  left: -24px;
+  border-right-color: var(--bg-card);
+}
+
+.experience-header {
+  margin-bottom: 1rem;
+}
+
+.experience-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.experience-company {
+  font-size: 1.125rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.experience-description {
+  margin-bottom: 1.5rem;
+}
+
+.experience-description p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.experience-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.experience-achievements li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 0;
+    --card-padding: 1.5rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .circulos .circulo {
+    width: 60%;
+    height: 60%;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    margin: 0;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
