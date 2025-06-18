@@ -629,6 +629,35 @@ body {
   .section-header {
     margin-bottom: 2rem;
   }
+  .experience-item {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-date {
+    margin-bottom: 1rem;
+  }
+
+  .experience-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    bottom: 0; /* Asegura que la línea se extienda completamente */
+  }
+
+  .date-badge::after {
+    display: none; /* Ocultamos el punto en la línea ya que pierde sentido en móvil */
+  }
+
+  .experience-content::before {
+    display: none; /* Ocultamos la flechita que apunta al timeline */
+  }
+
+  .experience-content {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 480px) {
