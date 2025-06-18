@@ -399,6 +399,19 @@ body {
   transform: scale(1.1);
 }
 
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card-link:hover .project-card {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
 .project-link-icon {
   width: 1.5rem;
   height: 1.5rem;
